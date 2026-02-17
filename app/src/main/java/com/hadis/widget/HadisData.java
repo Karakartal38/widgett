@@ -6,66 +6,69 @@ public class HadisData {
 
     private static final Random random = new Random();
 
+    // Format: text | source | narrator | type (h=hadis, k=hikmet)
     private static final String[][] ENTRIES = {
-        {"Ameller niyetlere goredir. Herkese niyet ettigi seyin karsiligi vardir.", "Buhari, Muslim", "Hz. Omer (r.a.)", "h"},
-        {"Sizden biriniz, kendisi icin sevip istedigi seyi din kardesi icin de sevip istemedikce gercek anlamda iman etmis olmaz.", "Buhari, Muslim", "Hz. Enes (r.a.)", "h"},
-        {"Muslim, elinden ve dilinden diger Muslumanlarin guvende oldugu kimsedir.", "Buhari, Muslim", "Hz. Abdullah b. Amr (r.a.)", "h"},
-        {"Allah'a ve ahiret gunune iman eden kimse ya hayir soylesin ya da sussun.", "Buhari, Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Kolaylastiriniz, zorlastirmayiniz; mujdeleyiniz, nefret ettirmeyiniz.", "Buhari", "Hz. Enes (r.a.)", "h"},
-        {"Insanlara merhamet etmeyene Allah da merhamet etmez. Yerdekilere merhamet ediniz ki goktekilere de size merhamet etsin.", "Buhari, Tirmizi", "Hz. Cerir b. Abdullah (r.a.)", "h"},
-        {"Kuvvetli kimse gureste baskalirini yenen degil, ofke aninda kendine hakim olandir.", "Buhari, Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Temizlik imanin yarisidir. Namaz bir nurdur, sadaka bir burhandir, sabir bir ziyadir.", "Muslim", "Hz. Ebu Malik (r.a.)", "h"},
-        {"Kim bir muminin dunya sikintilarindan birini giderirse, Allah da onun kiyamet gunu sikintilarindan birini giderir.", "Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Allah sizin dis gorunusunuze ve mallariniza degil, kalplerinize ve amellerinize bakar.", "Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Insanlarin en hayirlisi, insanlara en cok faydali olandir.", "Taberani", "Hz. Cabir (r.a.)", "h"},
-        {"Dunyada sanki bir garip veya bir yolcu gibi ol. Sagligindan hastaligin icin bir seyler hazirla.", "Buhari", "Hz. Abdullah b. Omer (r.a.)", "h"},
-        {"Ilim ogrenmek kadin erkek her Muslumana farzdir.", "Ibn Mace", "Hz. Enes (r.a.)", "h"},
-        {"Guler yuzle kardesini karsilaman da bir sadakadir.", "Tirmizi", "Hz. Ebu Zer (r.a.)", "h"},
-        {"Dogruluktan ayrilmayin! Cunku dogruluk iyilige, iyilik de cennete goturur.", "Buhari, Muslim", "Hz. Abdullah b. Mesud (r.a.)", "h"},
-        {"Birbirinizi sevmedikce cennete giremezsiniz. Araninizda selami yayiniz.", "Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Komsusu acken tok yatan bizden degildir.", "Hakim", "Hz. Enes (r.a.)", "h"},
-        {"Ayik olun, insanda bir et parcasi vardir. O iyi olunca butun duygular guzellesir. Iste o et parcasi kalptir.", "Buhari, Muslim", "Hz. Numan b. Besir (r.a.)", "h"},
-        {"Muminin durumu ne hostur! Basina sevinecek bir hal gelirse sukreder, sikinti gelirse sabreder.", "Muslim", "Hz. Suheyb (r.a.)", "h"},
-        {"Sabir, aci bir olayin ilk aninda gosterilendir.", "Buhari, Muslim", "Hz. Enes (r.a.)", "h"},
-        {"Haset etmekten sakinin. Cunku haset, atesin odunu yakip bitirdigi gibi sevaplari yer bitirir.", "Ebu Davud", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Cennet analarin ayaklari altindadir.", "Nesai", "Hz. Enes (r.a.)", "h"},
-        {"Her iyilik bir sadakadir. Guzel soz sadakadir.", "Buhari", "Hz. Cabir (r.a.)", "h"},
-        {"Mumin bir delikten iki kere isilmaz.", "Buhari, Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Guclu mumin, Allah katinda zayif muminden daha hayirli ve daha sevimlidir.", "Muslim", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Haksizlik karsisinda susan dilsiz seytandir.", "Beyhaki", "Hz. Ebu Said (r.a.)", "h"},
-        {"Iki gunu esit gecen ziyandadir.", "Deylemi", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Comert kimse Allah'a yakin, cennete yakin, insanlara yakin ve cehennemden uzaktir.", "Tirmizi", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Ofkelendiginde ayaktaysan otur, oturuyorsan yat. Cunku ofke seytandandir.", "Ebu Davud", "Hz. Ebu Zer (r.a.)", "h"},
-        {"Mumin muminin aynasidir; mumin muminin kardesidir.", "Ebu Davud, Tirmizi", "Hz. Ebu Hureyre (r.a.)", "h"},
-        {"Allah yavas hareket edip de isini saglam yapani sever.", "Beyhaki, Tirmizi", "Hz. Aise (r.anha)", "h"},
-        {"Islerinizi gizli tutarak yurutmeye gayret ediniz. Zira her nimet sahibine haset edilir.", "Taberani", "Hz. Muaz b. Cebel (r.a.)", "h"},
-        {"Din nasihattir. Allah'a, Kitabina, Peygamberine ve butun Muslumanlara karsi nasihattir.", "Muslim", "Hz. Temim ed-Dari (r.a.)", "h"},
-        {"Ey insanoglu, iyiligim sana daima inmekte; ama senin de kotuluklerin bana gelmekte.", "Hadis-i Kudsi", "Hadis-i Kudsi", "h"},
-        {"Insanlarin en hayirlisi, omru uzun ve ameli guzel olandir.", "Tirmizi", "Hz. Abdullah b. Busr (r.a.)", "h"},
-        // Hikmetler
-        {"Kader basa geldigi zaman gonderene kafa tutmak, inanci oldurur. Iman sahibinin bildigi tek sey: Hos geldi, safalar getirdi...", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Kalplerinizi islah etmeye calisin. Kalp, su bunye kafesinde bir kus gibidir. Bakilacak sey, kafes degil, icindeki kustur.", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Geliniz, varligimizi bir yana atarak O'na kosalim. Biraz zahmet ceksen, O'na vardiktan sonra hepsi gecip gider.", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Yalniz kaldigin zaman, seni kotu isten koruyacak duyguya muhtacsin. Hakk'in her an seni kontrol ettigini icinden sezmelisin.", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Allah'a kul oldugunu iddia ediyorsun, ibadet ederken de kalbinde baskasini sakliyorsun. Kapi onunde tevhid, iceri girince de sirk!", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Dunyada O'nunla sohbet istiyorsan sessiz ol. Allah'in sevgili kullari edeplidir.", "Fethur-Rabbani, 4. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Olumu dusun, afetlere sabirla karsi koy, Allah'a tevekkul et. Olumu dusunursen hirsin yok olur.", "Fethur-Rabbani, 5. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Ihlas yolunu tut. En buyuk sey odur. Ihlas sahibinin sahi ruhunda yasar.", "Fethur-Rabbani, 5. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Sabirli olun, icinde bulundugunuz dunya, afet ve musibet doludur. Sabir basariya ulastirir.", "Fethur-Rabbani, 7. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Isyan hastaligina care, itaattir. Zulmu, adalet yikar. Hata bir hastaliktir; ilaci ise dogruluktur.", "Fethur-Rabbani, 9. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Tevbe etmek is degil; asil is onu bozmamaktadir. Bir agaci dikmek marifet degil, asil marifet meyvesini almaktir.", "Fethur-Rabbani, 5. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Butun omrunu dunyaliga veriyorsun. Herkesin kismeti yillarca once hazirlanmis. Neden dunya icin huzun duyarsin?", "Fethur-Rabbani, 5. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Dogru olarak Allah'tan utanin. Omrunuz gecmekte, zamaniniz tukenmekte. Kalbinize sahip olun.", "Fethur-Rabbani, 4. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Dunyelik toplarken dikkatli ol. Gece odun toplayan gibi olma. Ayik ol!", "Fethur-Rabbani, 4. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Bir eline dunyayi, obur eline de ahireti al. Aralarindan cik. Mevla'na yonel. Kalbin ciplak olsun.", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Allah yolcularinin hali ne kadar hostur. Onlar, marifet sarabini icmislerdir.", "Fethur-Rabbani, 15. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Bildiklerinle amel etmek, seni Hakk'a goturur. Ilmiyle amil olanlar, Peygamber Efendimizin varisleridir.", "Fethur-Rabbani, 3. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Serli adamlarla konusma. Onlarla oturan bir gun gelir kotu olur. Kuran'in golgesinde yuru.", "Fethur-Rabbani, 4. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Gayretin yemek, icmek olmasin. Butun gayretin en cok lazim olana olmali. O en luzumlu olan ise Allah'tir.", "Fethur-Rabbani, 1. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Cenab-i Hakk'a en yakin olan kimse, guzel ahlakla huyunu genisletip susleyen kimsedir.", "Fethur-Rabbani, Tarikat", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Ruhunu temiz tutmaya gayret et. O kudret eli, bir gun sana da gelir; kolundan tutar.", "Fethur-Rabbani, 5. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Iman sahibi, yalniz Allah'tan korkar. Kalbi Hakk'ta, kalibi ise yerdedir.", "Fethur-Rabbani, 11. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
-        {"Iman sahibi, bir yolcu gibidir. Burada az zaman kalacagini bilir. Calisir, kazanir, ama icten Mevla ile olur.", "Fethur-Rabbani, 15. Sohbet", "Abdulkadir Geylani (k.s.)", "k"},
+        {"Ameller niyetlere göredir. Herkese niyet ettiğinin karşılığı vardır. Kim Allah'a ve Resûlüne hicret etmişse, onun hicreti Allah'a ve Resûlünedir.", "Buhârî, Müslim", "Hz. Ömer (r.a.)", "h"},
+        {"Sizden biriniz, kendisi için sevip istediği şeyi din kardeşi için de sevip istemedikçe gerçek anlamda iman etmiş olmaz.", "Buhârî, Müslim", "Hz. Enes (r.a.)", "h"},
+        {"Müslüman, elinden ve dilinden diğer Müslümanların güvende olduğu kimsedir.", "Buhârî, Müslim", "Hz. Abdullah b. Amr (r.a.)", "h"},
+        {"Allah'a ve ahiret gününe iman eden kimse ya hayır söylesin ya da sussun. Allah'a ve ahiret gününe iman eden kimse komşusuna ikram etsin.", "Buhârî, Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Kolaylaştırınız, zorlaştırmayınız; müjdeleyiniz, nefret ettirmeyiniz.", "Buhârî", "Hz. Enes (r.a.)", "h"},
+        {"İnsanlara merhamet etmeyene Allah da merhamet etmez. Yeryüzündekilere merhamet ediniz ki gökyüzündekiler de size merhamet etsin.", "Buhârî, Tirmizî", "Hz. Cerîr b. Abdullah (r.a.)", "h"},
+        {"Kuvvetli kimse güreşte başkalarını yenen değil, öfke anında kendine hâkim olandır.", "Buhârî, Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Temizlik imanın yarısıdır. Namaz bir nurdur, sadaka bir burhandır, sabır bir ziyadır.", "Müslim", "Hz. Ebû Mâlik (r.a.)", "h"},
+        {"Kim bir müminin dünya sıkıntılarından birini giderirse, Allah da onun kıyamet günü sıkıntılarından birini giderir. Kul, kardeşinin yardımında olduğu müddetçe Allah da kulun yardımındadır.", "Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Allah sizin dış görünüşünüze ve mallarınıza değil, kalplerinize ve amellerinize bakar.", "Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"İnsanların en hayırlısı, insanlara en çok faydalı olandır.", "Taberânî", "Hz. Câbir (r.a.)", "h"},
+        {"Dünyada sanki bir garip veya bir yolcu gibi ol. Sağlığından hastalığın için, hayatından da ölümün için bir şeyler hazırla.", "Buhârî", "Hz. Abdullah b. Ömer (r.a.)", "h"},
+        {"İlim öğrenmek kadın erkek her Müslümana farzdır.", "İbn Mâce", "Hz. Enes (r.a.)", "h"},
+        {"Güler yüzle kardeşini karşılaman da bir sadakadır. Yolunu kaybeden kimseye yol göstermen sadakadır.", "Tirmizî", "Hz. Ebû Zer (r.a.)", "h"},
+        {"Doğruluktan ayrılmayın! Çünkü doğruluk iyiliğe, iyilik de cennete götürür. Yalandan sakının!", "Buhârî, Müslim", "Hz. Abdullah b. Mes'ûd (r.a.)", "h"},
+        {"Birbirinizi sevmedikçe cennete giremezsiniz. Aranızda selâmı yayınız.", "Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Komşusu açken tok yatan bizden değildir.", "Hâkim", "Hz. Enes (r.a.)", "h"},
+        {"Ayık olun, insanda bir et parçası vardır. O iyi olunca bütün duygular güzelleşir. İşte o et parçası kalptir.", "Buhârî, Müslim", "Hz. Nu'mân b. Beşîr (r.a.)", "h"},
+        {"Müminin durumu ne hoştur! Başına sevinecek bir hal gelirse şükreder, sıkıntı gelirse sabreder. Her ikisi de onun için hayırdır.", "Müslim", "Hz. Suheyb (r.a.)", "h"},
+        {"Sabır, acı bir olayın ilk anında gösterilendir. Asıl meziyet, musibete ilk çarptığında Allah'a sığınabilmektir.", "Buhârî, Müslim", "Hz. Enes (r.a.)", "h"},
+        {"Haset etmekten sakının. Çünkü haset, ateşin odunu yakıp bitirdiği gibi sevapları yer bitirir.", "Ebû Dâvûd", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Cennet anaların ayakları altındadır.", "Nesâî", "Hz. Enes (r.a.)", "h"},
+        {"Her iyilik bir sadakadır. Güzel söz sadakadır.", "Buhârî", "Hz. Câbir (r.a.)", "h"},
+        {"Mümin bir delikten iki kere ısırılmaz.", "Buhârî, Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Güçlü mümin, Allah katında zayıf müminden daha hayırlı ve daha sevimlidir. Sana fayda veren şeye gayret et ve Allah'tan yardım iste.", "Müslim", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Allah sevdiği kimseyi üzmez; ama tecrübe için bazı belâ verir. Her belâ bir iyiliğin öncüsüdür.", "Tirmizî", "Hz. Enes (r.a.)", "h"},
+        {"Haksızlık karşısında susan dilsiz şeytandır.", "Beyhakî", "Hz. Ebû Saîd (r.a.)", "h"},
+        {"İki günü eşit geçen ziyandadır.", "Deylemî", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Cömert kimse Allah'a yakın, cennete yakın, insanlara yakın ve cehennemden uzaktır.", "Tirmizî", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Öfkelendiğinde ayaktaysan otur, oturuyorsan yat. Çünkü öfke şeytandandır.", "Ebû Dâvûd", "Hz. Ebû Zer (r.a.)", "h"},
+        {"Ey insanoğlu, iyiliğim sana daima inmekte; ama senin de kötülüklerin bana gelmekte.", "Hadis-i Kudsî", "Hadis-i Kudsî", "h"},
+        {"Mümin müminin aynasıdır; mümin müminin kardeşidir. Onun geçimini korur ve her yönden onu gözetir.", "Ebû Dâvûd, Tirmizî", "Hz. Ebû Hüreyre (r.a.)", "h"},
+        {"Allah yavaş hareket edip de işini sağlam yapanı sever. Acele şeytandan, teenni ise Allah'tandır.", "Beyhakî, Tirmizî", "Hz. Âişe (r.anhâ)", "h"},
+        {"İşlerinizi gizli tutarak yürütmeye gayret ediniz. Zira her nimet sahibine haset edilir.", "Taberânî", "Hz. Muâz b. Cebel (r.a.)", "h"},
+        {"Din nasihattir. Allah'a, Kitabına, Peygamberine ve bütün Müslümanlara karşı nasihattir.", "Müslim", "Hz. Temîm ed-Dârî (r.a.)", "h"},
+        // ===== Fethü'r-Rabbânî Hikmetleri =====
+        {"Kader başa geldiği zaman gönderene kafa tutmak, inancı öldürür. İman sahibinin bildiği tek şey: Hoş geldi, safalar getirdi… diye karşılamaktır.", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Kalplerinizi ıslâh etmeye çalışın. Kalp, şu bünye kafesinde bir kuş gibidir. Bakılacak şey, kafes değil, içindeki kuştur.", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Geliniz, varlığımızı bir yana atarak O'na koşalım. Biraz zahmet çeksen, O'na vardıktan sonra hepsi geçip gider.", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Yalnız kaldığın zaman, seni kötü işten koruyacak duyguya muhtaçsın. Hakk'ın her an seni kontrol ettiğini içinden sezmelisin.", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Allah'a kul olduğunu iddia ediyorsun, ibadet ederken de kalbinde başkasını saklıyorsun. Kapı önünde tevhid, içeri girince de şirk! Yakışır mı?", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Dünyada O'nunla sohbet istiyorsan sessiz ol. Allah'ın sevgili kulları edeplidir. Attıkları her adım, açık izne bağlıdır.", "Fethü'r-Rabbânî, 4. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Ölümü düşün, âfetlere sabırla karşı koy, Allah'a tevekkül et. Ölümü düşünürsen hırsın yok olur. Sabırlı olursan her murada erersin.", "Fethü'r-Rabbânî, 5. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"İhlâs yolunu tut. En büyük şey odur. İhlâs sahibinin şahı ruhunda yaşar. İçini dışını bir eden var mı?", "Fethü'r-Rabbânî, 5. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Sabırlı olun, içinde bulunduğunuz dünya, âfet ve musibet doludur. Sabır başarıya ulaştırır, yardımı bol eder.", "Fethü'r-Rabbânî, 7. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"İsyan hastalığına çare, itaattir. Zulmü, adalet yıkar. Hata bir hastalıktır; ilâcı ise doğruluktur.", "Fethü'r-Rabbânî, 9. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Hak'la yalnızlığın temiz olursa için ürperir, kalbin parlar. Dünyalık işleri düşünmek, insanın iç âlemini kapkara eder.", "Fethü'r-Rabbânî, 5. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Tevbe etmek iş değil; asıl iş onu bozmamaktadır. Bir ağacı dikmek marifet değil, asıl marifet meyvesini almaktır.", "Fethü'r-Rabbânî, 5. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Bütün ömrünü dünyalığa veriyorsun. Herkesin kısmeti yıllarca önce hazırlanmış. İstesen de gelir, istemesen de. Neden dünya için hüzün duyarsın?", "Fethü'r-Rabbânî, 5. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Doğru olarak Allah'tan utanın. Ömrünüz geçmekte, zamanınız tükenmekte… Kalbinize sahip olun. Dışınız dünyayı yapsın, kalbiniz Allah ile olsun.", "Fethü'r-Rabbânî, 4. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Dünyalık toplarken dikkatli ol. Gece odun toplayan gibi olma. Elini attığın zaman, neyi alacağını önceden kestirmelisin. Ayık ol!", "Fethü'r-Rabbânî, 4. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Hak'la çekişme. Malın azaldı diye O'nu itham etme. Suçu evvelâ kendinde ara. En büyük hüküm, senin mi olmalı, yoksa O'nun mu?", "Fethü'r-Rabbânî, 4. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Bir eline dünyayı, öbür eline de âhireti al. Aralarından çık. Mevlâ'na yönel. Kalbin çıplak olsun.", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Allah yolcularının hâli ne kadar hoştur. Onlar, marifet şarabını içmişlerdir. Hakk'ın lütuf kucağında yatarlar.", "Fethü'r-Rabbânî, 15. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Bildiklerinle amel etmek, seni Hakk'a götürür. İlmiyle âmil olanlar, Peygamber Efendimizin vârisleridir.", "Fethü'r-Rabbânî, 3. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Şerli adamlarla konuşma. Onlarla oturan bir gün gelir kötü olur. Kur'ân-ı Kerîm'in gölgesinde yürü, Sünnet-i Resûlüllah'a uy.", "Fethü'r-Rabbânî, 4. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Gayretin yemek, içmek olmasın. Çünkü hepsi nefsin arzularıdır. Bütün gayretin en çok lâzım olana olmalı. O en lüzumlu olan ise Allah'tır.", "Fethü'r-Rabbânî, 1. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Cenâb-ı Hakk'a en yakın olan kimse, güzel ahlâkla huyunu genişletip süsleyen kimsedir.", "Fethü'r-Rabbânî, Tarikat", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"Ruhunu temiz tutmaya gayret et. O kudret eli, bir gün sana da gelir; kolundan tutar, velayet makamına yerleştirir.", "Fethü'r-Rabbânî, 5. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"İman sahibi, yalnız Allah'tan korkar. Kalbi Hakk'ta, kalıbı ise yerdedir.", "Fethü'r-Rabbânî, 11. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
+        {"İman sahibi, bir yolcu gibidir. Burada az zaman kalacağını bilir. Çalışır, kazanır, ama içten Mevlâ ile olur.", "Fethü'r-Rabbânî, 15. Sohbet", "Abdülkâdir Geylânî (k.s.)", "k"},
     };
 
     public static int getCount() {
@@ -73,23 +76,23 @@ public class HadisData {
     }
 
     public static String getText(int index) {
-        return ENTRIES[index % ENTRIES.length][0];
+        return ENTRIES[index][0];
     }
 
     public static String getSource(int index) {
-        return ENTRIES[index % ENTRIES.length][1];
+        return ENTRIES[index][1];
     }
 
     public static String getNarrator(int index) {
-        return ENTRIES[index % ENTRIES.length][2];
+        return "— " + ENTRIES[index][2];
     }
 
     public static boolean isHadis(int index) {
-        return ENTRIES[index % ENTRIES.length][3].equals("h");
+        return ENTRIES[index][3].equals("h");
     }
 
     public static String getBadgeText(int index) {
-        return isHadis(index) ? "Hadis-i Serif" : "Fethur-Rabbani";
+        return isHadis(index) ? "Hadis-i Şerif" : "Fethü'r-Rabbânî";
     }
 
     public static int getRandomIndex() {
